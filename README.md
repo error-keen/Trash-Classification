@@ -72,7 +72,7 @@ C语言：此部分是需要烧到STM32F103C8T6上的代码，先在自己电脑
 
 7. ![image-20231111215707643](https://github.com/error-keen/data-structure/blob/main/img/trash4.png)
 
-   这三个文件，model和trash_ identification.py是传到Jetson Nano上的，运行trash_ identification.py就可以启动了，串口控制PWM驱动舵机文件是烧到STM32上的，如果要用自己的模型，替换掉model文件里的ppyolo_tiny_650e_coco_t就可以了。
+   这三个文件，model和trash_ identification.py是传到Jetson Nano上的，运行trash_ identification.py就可以启动了，串口控制PWM驱动舵机文件是烧到STM32上的，Q.mp4是播放的宣传视频，如果要用自己的模型，替换掉model文件里的ppyolo_tiny_650e_coco_t就可以了。
 
 8. 本来我想把所有的资料都传github上面，但是资料内存太大，更详细的资料我放百度网盘上了。
 
