@@ -12,13 +12,13 @@
 
 功能：Jetson Nano是一款体积小巧、功能强大的人工智能嵌入式开发板,具备的性能和能效可以运行现代AI 工作负载，并行运行多个神经网络，以及同时处理来自多个高清传感器的数据。本项目是在百度飞桨上训练大量垃圾图形识别，训练完模型之后，基于Jetson Nano在Paddle Inference上进行推理部署。
 
-![image-20231109205019499](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20231109205019499.png)
+![image-20231109205019499](https://github.com/error-keen/data-structure/blob/main/img/trash1.jpg)
 
 **STM32舵机驱动**：STM32F103C8T6
 
 功能：STM32F103C8T6是一款单片机芯片，由意法半导体Stmicroelectronics设计。STM32F103C8T6广泛应用于电子设备中，具有复杂控制和算法的处理器，如工控系统、机器人和马达控制等。它的主要功能包括模拟数字转换（ADC）、定时器和中断控制器（TIM）、串行通信接口（USART）等功能。此外，它还拥有许多具有创新性和高性能的特性，如高速I/O端口、嵌入式硬件分支预测等。它是一款成本低、功能强大的单片机。本项目以STM32F103C8T6作为主控芯片，Jetson Nano识别完产生结果，通过串口通信将结果传给STM32F103C8T6，然后再根据结果通过PWM信号控制舵机转动。
 
-![STM32](D:\桌面\STM32.jpg)
+![STM32](https://github.com/error-keen/data-structure/blob/main/img/trash2.jpg)
 
 **超声波传感器**：HC-SR04
 
@@ -64,13 +64,13 @@ C语言：此部分是需要烧到STM32F103C8T6上的代码，先在自己电脑
 
 4. 这一步是我对以上文章简单的说明，第一步我推荐标注工具labelme 下载与使用csdn那篇文章，只需要看到生成每张图片的.json文件就行了，后面不需要管，标注照片时，需要两个文件夹，一个为\_img文件，放置图片，另一个为\_json文件，放置每张图片对应生成的.json文件,这两个文件就是数据集，然后fork一下我的飞浆的这个项目，运行进入，然后将这两个文件的压缩文件传到根目录上，第三步我上面有详细的说明，根据自己的需求修改配置文件，大概就是这样，按照我飞浆上的项目一步一步运行就可以了。
 
-   ![image-20231111100944784](D:\桌面\trash3.png)
+   ![image-20231111100944784](https://github.com/error-keen/data-structure/blob/main/img/trash3.png)
 
 5. 数据集不能太小，太小的话会报错，如果没问题的话，就可以导出推理模型，里面有这四个文件infer_cfg.yml，model.pdiparams，model.pdiparams.info，model.pdmodel，这四个文件其中有一个没用到，不过问题不大。
 
 6. 将上面的包含着四个文件的文件夹替换掉我的model文件里的ppyolo_tiny_650e_coco_t文件就可以了，最后在终端上运行trash_identification.py就可以了，或者写一个shell程序，设置一下开机自动启动，都可以。
 
-7. ![image-20231111215707643](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20231111215707643.png)
+7. ![image-20231111215707643](https://github.com/error-keen/data-structure/blob/main/img/trash4.png)
 
    这三个文件，model和trash_ identification.py是传到Jetson Nano上的，运行trash_ identification.py就可以启动了，串口控制PWM驱动舵机文件是烧到STM32上的，如果要用自己的模型，替换掉model文件里的ppyolo_tiny_650e_coco_t就可以了。
 
