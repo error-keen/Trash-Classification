@@ -1,6 +1,3 @@
-*.md linguist-language=Python
-*.yml linguist-language=Python
-*.html linguist-language=Python
 *.js linguist-language=Python
 *.xml linguist-language=Python
 *.css linguist-language=Python
@@ -8,3 +5,6 @@
 *.uml linguist-language=Python
 *.cmd linguist-language=Python
 *.py linguist-language=Python
+*.c linguist-language=Python
+*.h linguist-language=Python
+*.s linguist-language=Python
